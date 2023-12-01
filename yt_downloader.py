@@ -5,6 +5,7 @@ link = input('Please paste a link for a video you want to download: ')
 def downloader(link):
     video = YouTube(link)
     title = video.title
+    #We will get only 720p quality
     dw_video = video.streams.get_highest_resolution()
     try:
         dw_video.download('D:\Загрузка')
@@ -12,4 +13,4 @@ def downloader(link):
     except:
         print('We get some error')
         
-downloader(link)        
+downloader(link)
